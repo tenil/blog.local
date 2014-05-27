@@ -1,0 +1,26 @@
+Aula 01
+-------
+Apresentação
+
+	No <VirtualHost *:80>
+
+	SetEnv APPLICATION_ENV "development"
+	SetEnv PROJECT_ROO "pasta/do/projeto/sem/o/public"
+
+	Essas variáveis podem ser acessadas pelo php.
+
+
+Aula 02
+-------
+Instalação
+
+
+Aula 03
+-------
+Projeto: Criação de um blog.
+Criação do banco de dados.
+
+config/application.config.php: Arquivo com as configurações gerais da aplicação. São configurações usadas por todos os módulos e componentes.
+config/test.config.php: Arquivo com as configurações usadas pelos testes automatizados que criaremos no decorrer do projeto.
+config/autoloadlglobal.php e config/autoload/local.php: O arquivo global.php é usado como auxiliar ao application.config.php  pois  também  contém  configurações  para  a  aplicação como um todo. A idéia é colocar neste arquivo configurações que podem mudar de acordo com a máquina do desenvolvedor. Um exemplo são as configurações da conexão com o banco de dados. Estas configurações podem ser alteradas para as máquinas locais, dos  desenvolvedores. Para isso o desenvolvedor sobrescreve as configurações no local.php. O arquivo local.php não deve ser salvo no controle de versões (svn ou git por exemplo).
+module/Nome/config/module.config.php: Configurações específicas ao módulo.
