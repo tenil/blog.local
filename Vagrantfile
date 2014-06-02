@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-   config.vm.network "forwarded_port", guest: 80, host: 1234
+  config.vm.network "forwarded_port", guest: 80, host: 8082
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
   # Bridged networks make the machine appear as another physical device on
   # your network.
   # config.vm.network "public_network", ip: "192.168.25.12"
-   config.vm.network "public_network"
+  config.vm.network "public_network"
 
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false

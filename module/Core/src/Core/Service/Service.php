@@ -6,9 +6,8 @@ use Zend\ServiceManager\ServiceManagerAwareInterface;
 use Zend\ServiceManager\Exception\ServiceNotFoundException;
 use Core\Db\TableGateway;
 
-abstract class Service implements ServiceManagerAwareInterface
-{
-	/**
+abstract class Service implements ServiceManagerAwareInterface {
+    /**
      * @var ServiceManager
      */
     protected $serviceManager;

@@ -1,0 +1,22 @@
+<div class="blog-header">
+    <h1 class="blog-post-title"><?php echo $this->translate($post['title']) ?></h1>
+</div>
+
+<div class="blog-post">
+
+    <p class="blog-post-meta">Publicado em <?php echo $this->dateFormat(new DateTime($post['post_date']), \IntlDateFormatter::MEDIUM, \IntlDateFormatter::SHORT, 'pt_BR'); ?></kbd>
+    <p><?php echo nl2br($post['description']); ?></p>
+    <h2>Comentários</h2>
+    <?php if (count($post['comments']) == 0): ?>
+        <p>Não existem comentários</p>
+    <?php else: ?>
+        <?php foreach ($post['comments'] as $c): ?>
+            <p>
+                Autor: <?php echo $c['name']; ?><br>
+                Data:  <?php echo $this->dateFormat(new DateTime($c['comment_date']), \IntlDateFormatter::SHORT, \IntlDateFormatter::SHORT, 'pt_BR'); ?><br>
+                Comentário: <?php echo $c['description']; ?><br>
+            </p>
+        <?php endforeach; ?>
+    <?php endif; ?>
+
+</div>

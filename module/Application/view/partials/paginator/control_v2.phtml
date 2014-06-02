@@ -1,0 +1,38 @@
+<?php if ($this->pageCount): ?>
+    <div class="col-md-12 text-center">
+        <ul class="pagination">
+            <!-- First page link -->
+            <?php if (isset($this->previous)): ?>
+                <li><a href="<?php echo $this->url($this->route, array('page'=>$this->first)); ?>">Primeira</a></li>
+            <?php else: ?>
+                <li class="disabled"><a href="#">Primeira</a></li>
+            <?php endif; ?>
+
+            <!-- Previous page link -->
+            <?php if (isset($this->previous)): ?>
+                <li><a href="<?php echo $this->url($this->route, array('page'=>$this->previous)); ?>">Anterior</a></li>
+            <?php else: ?>
+                <li class="disabled"><a href="#">Anterior</a></li>
+            <?php endif; ?>
+
+            <?php foreach ($this->pagesInRange as $pagina) { ?>
+                <?php echo ($this->current === $pagina) ? "<li class=\"disabled\">" : "<li>"; ?><a href="<?php echo $this->url($this->route, array('page'=>$pagina)); ?>"><?php echo $pagina; ?></a></li> 
+            <?php }; ?>
+
+            <!-- Next page link -->
+            <?php if (isset($this->next)): ?>
+                <li><a href="<?php echo $this->url($this->route, array('page'=>$this->next)); ?>">Próxima</a></li>
+            <?php else: ?>
+                <li class="disabled"><a href="#">Próxima</a></li>
+            <?php endif; ?>
+
+            <!-- Last page link -->
+            <?php if (isset($this->next)): ?>
+                <li><a href="<?php echo $this->url($this->route, array('page'=>$this->last)); ?>">Última</a></li>
+            <?php else: ?>
+                <li class="disabled"><a href="#">Última</a></li>
+            <?php endif; ?>
+        </ul> 
+        <p class="text-center"><?php echo $this->firstItemNumber; ?>-<?php echo $this->lastItemNumber; ?> de <?php echo $this->totalItemCount; ?></p>
+    </div>
+<?php endif; ?>

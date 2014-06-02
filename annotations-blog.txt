@@ -24,3 +24,57 @@ config/application.config.php: Arquivo com as configurações gerais da aplicaç
 config/test.config.php: Arquivo com as configurações usadas pelos testes automatizados que criaremos no decorrer do projeto.
 config/autoloadlglobal.php e config/autoload/local.php: O arquivo global.php é usado como auxiliar ao application.config.php  pois  também  contém  configurações  para  a  aplicação como um todo. A idéia é colocar neste arquivo configurações que podem mudar de acordo com a máquina do desenvolvedor. Um exemplo são as configurações da conexão com o banco de dados. Estas configurações podem ser alteradas para as máquinas locais, dos  desenvolvedores. Para isso o desenvolvedor sobrescreve as configurações no local.php. O arquivo local.php não deve ser salvo no controle de versões (svn ou git por exemplo).
 module/Nome/config/module.config.php: Configurações específicas ao módulo.
+
+O fitro (inputFilter - Zend\InputFilter\InputFilter) foi criado na ENTIDADE.
+
+O métido getInputFilter é onde serão configurados os filtros e validadores da tabela.
+
+Por que escrever na entidade? Por que a entidade pode ser manipulada de diversas formas, de um form, de uma API (rest), ou de qualquer outra forma.
+
+Não interessa quem vai manupular a entidade, um form, um programa, seja o que for, a entidade tem a responsabilidade de filtrar e validar os dados.
+
+O filtro é executado no momento que você utiliza a entidade.
+
+Aula 04
+-------
+Usuário -> solicita Url -> Apache -> index.php -> Controlador   -> Modelo
+                                                                -> Visão
+
+Aula 05 - Paginator
+-------------------
+Partials: É um porção de html, é um pedaço de uma visão que poderá ser usada em várias visões. É um trexo de visão que você vai reaproveitar.
+Exemplos: Paginator, menu, url, rodapé.
+
+Aula 07 - Serviços
+------------------
+
+ServiceManager
+
+Tudo no Zend Framework 2 é um serviço, o Controller é um serviço.
+
+Caso a função function($sm) fique muito grande/complexa, você pode criar uma classe e chamá-la, ao invés de criar a função no Module.php/module.config.php.
+Exemplos:
+1. Module.php
+    Nesse caso, a classe Core\Db\AdapterServiceFactory deve implementar FactoryInterface e também o método createService.
+
+    public function getServiceConfig()
+    {
+        return array(
+            'factories' => array(
+                'DbAdapter' => 'Core\Db\AdapterServiceFactory'
+            )
+        );
+    }
+
+2. module.config.php
+    'service_manager' =>array(
+        'factories' => array(
+            'Session' => function($sm) {
+                return new Container('ZF2napratica');
+            },
+            'Admin\Service\Auth' => function($sm) {
+                $dbAdapter = $sm->get('DbAdapter');
+                return new Service\Auth($dbAdapter);
+            }
+        )
+    ),

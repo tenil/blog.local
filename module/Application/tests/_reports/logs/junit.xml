@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Application Test Suite" tests="21" assertions="63" failures="0" errors="0" time="15.071673">
+    <testsuite name="IndexControllerTest" file="/vagrant/module/Application/tests/src/Application/Controller/IndexControllerTest.php" tests="6" assertions="24" failures="0" errors="0" time="8.670933">
+      <testcase name="test404" class="IndexControllerTest" file="/vagrant/module/Application/tests/src/Application/Controller/IndexControllerTest.php" line="31" assertions="1" time="2.926834"/>
+      <testcase name="testIndexAction" class="IndexControllerTest" file="/vagrant/module/Application/tests/src/Application/Controller/IndexControllerTest.php" line="41" assertions="5" time="1.487857"/>
+      <testcase name="testIndexActionPaginator" class="IndexControllerTest" file="/vagrant/module/Application/tests/src/Application/Controller/IndexControllerTest.php" line="71" assertions="8" time="2.224018"/>
+      <testcase name="testWithOutIdPostAction" class="IndexControllerTest" file="/vagrant/module/Application/tests/src/Application/Controller/IndexControllerTest.php" line="116" assertions="2" time="0.380018"/>
+      <testcase name="testInvalidIdPostAction" class="IndexControllerTest" file="/vagrant/module/Application/tests/src/Application/Controller/IndexControllerTest.php" line="127" assertions="2" time="0.452413"/>
+      <testcase name="testPostAction" class="IndexControllerTest" file="/vagrant/module/Application/tests/src/Application/Controller/IndexControllerTest.php" line="137" assertions="6" time="1.199793"/>
+    </testsuite>
+    <testsuite name="Application\Model\CommentTest" file="/vagrant/module/Application/tests/src/Application/Model/CommentTest.php" tests="8" assertions="22" failures="0" errors="0" time="3.972832">
+      <testcase name="testGetInputFilter" class="Application\Model\CommentTest" file="/vagrant/module/Application/tests/src/Application/Model/CommentTest.php" line="15" assertions="1" time="0.337836"/>
+      <testcase name="testInputFilterValid" class="Application\Model\CommentTest" file="/vagrant/module/Application/tests/src/Application/Model/CommentTest.php" line="26" assertions="8" time="0.273683"/>
+      <testcase name="testInputFilterInvalido" class="Application\Model\CommentTest" file="/vagrant/module/Application/tests/src/Application/Model/CommentTest.php" line="42" assertions="2" time="0.306732"/>
+      <testcase name="testInsert" class="Application\Model\CommentTest" file="/vagrant/module/Application/tests/src/Application/Model/CommentTest.php" line="51" assertions="2" time="0.483685"/>
+      <testcase name="testInsertInvalido" class="Application\Model\CommentTest" file="/vagrant/module/Application/tests/src/Application/Model/CommentTest.php" line="65" assertions="1" time="0.383794"/>
+      <testcase name="testUpdate" class="Application\Model\CommentTest" file="/vagrant/module/Application/tests/src/Application/Model/CommentTest.php" line="73" assertions="3" time="0.950371"/>
+      <testcase name="testUpdateInvalido" class="Application\Model\CommentTest" file="/vagrant/module/Application/tests/src/Application/Model/CommentTest.php" line="96" assertions="2" time="0.722737"/>
+      <testcase name="testDelete" class="Application\Model\CommentTest" file="/vagrant/module/Application/tests/src/Application/Model/CommentTest.php" line="112" assertions="3" time="0.513994"/>
+    </testsuite>
+    <testsuite name="Application\Model\PostTest" file="/vagrant/module/Application/tests/src/Application/Model/PostTest.php" tests="7" assertions="17" failures="0" errors="0" time="2.427908">
+      <testcase name="testGetInputFilter" class="Application\Model\PostTest" file="/vagrant/module/Application/tests/src/Application/Model/PostTest.php" line="14" assertions="1" time="0.319264"/>
+      <testcase name="testInputFilterValid" class="Application\Model\PostTest" file="/vagrant/module/Application/tests/src/Application/Model/PostTest.php" line="25" assertions="5" time="0.268412"/>
+      <testcase name="testInputFilterInvalido" class="Application\Model\PostTest" file="/vagrant/module/Application/tests/src/Application/Model/PostTest.php" line="38" assertions="1" time="0.286211"/>
+      <testcase name="testInsert" class="Application\Model\PostTest" file="/vagrant/module/Application/tests/src/Application/Model/PostTest.php" line="50" assertions="2" time="0.365079"/>
+      <testcase name="testInsertInvalido" class="Application\Model\PostTest" file="/vagrant/module/Application/tests/src/Application/Model/PostTest.php" line="65" assertions="2" time="0.291562"/>
+      <testcase name="testUpdate" class="Application\Model\PostTest" file="/vagrant/module/Application/tests/src/Application/Model/PostTest.php" line="73" assertions="3" time="0.542221"/>
+      <testcase name="testDelete" class="Application\Model\PostTest" file="/vagrant/module/Application/tests/src/Application/Model/PostTest.php" line="96" assertions="3" time="0.355159"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
