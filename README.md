@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ZendSkeletonApplication
 =======================
 
@@ -75,3 +76,9 @@ project and you should be ready to go! It should look something like below:
             Allow from all
         </Directory>
     </VirtualHost>
+=======
+blog.local
+==========
+
+Curso ZF2 na Prática
+>>>>>>> 5b482fc9453fbc0aed160331ca29a6f55e2260ce
