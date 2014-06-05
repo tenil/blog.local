@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for /vagrant/module/Admin/src/Admin/Service</title>
+  <title>Dashboard for /vagrant/module/Admin/src/Admin/Form</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../../../css/bootstrap.min.css" rel="stylesheet">
   <link href="../../../css/nv.d3.css" rel="stylesheet">
@@ -21,7 +21,7 @@
         <li><a href="../../../index.html">/vagrant/module/Admin</a></li>
         <li><a href="../../index.html">src</a></li>
         <li><a href="../index.html">Admin</a></li>
-        <li><a href="index.html">Service</a></li>
+        <li><a href="index.html">Form</a></li>
         <li class="active">(Dashboard)</li>
 
       </ol>
@@ -61,6 +61,7 @@
         </tr>
        </thead>
        <tbody>
+       <tr><td><a href="src/Admin/Form/Login.php.html#7">Login</a></td><td class="text-right">0%</td></tr>
 
        </tbody>
       </table>
@@ -114,6 +115,7 @@
         </tr>
        </thead>
        <tbody>
+       <tr><td><a href="src/Admin/Form/Login.php.html#9">Login::__construct</a></td><td class="text-right">0%</td></tr>
 
        </tbody>
       </table>
@@ -160,7 +162,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#classCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,1], "Class Coverage"))
+      .datum(getCoverageDistributionData([1,0,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -178,7 +180,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#methodCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,4], "Method Coverage"))
+      .datum(getCoverageDistributionData([1,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -229,7 +231,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[100,8,"<a href=\"src\/Admin\/Service\/Auth.php.html#17\">Auth<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[0,1,"<a href=\"src\/Admin\/Form\/Login.php.html#7\">Login<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);
@@ -254,7 +256,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Method Complexity');
 
     d3.select('#methodComplexity svg')
-      .datum(getComplexityData([[100,1,"<a href=\"src\/Admin\/Service\/Auth.php.html#30\">Auth::__construct<\/a>"],[100,4,"<a href=\"src\/Admin\/Service\/Auth.php.html#40\">Auth::authenticate<\/a>"],[100,1,"<a href=\"src\/Admin\/Service\/Auth.php.html#72\">Auth::logout<\/a>"],[100,2,"<a href=\"src\/Admin\/Service\/Auth.php.html#84\">Auth::authorize<\/a>"]], 'Method Complexity'))
+      .datum(getComplexityData([[0,1,"<a href=\"src\/Admin\/Form\/Login.php.html#9\">Login::__construct<\/a>"]], 'Method Complexity'))
       .transition()
       .duration(500)
       .call(chart);

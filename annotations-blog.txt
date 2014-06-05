@@ -78,3 +78,52 @@ Exemplos:
             }
         )
     ),
+
+Aula 08 - Formulários
+---------------------
+Testar o formulário para ver se ele foi requisitado via post ou via get.
+
+No controller, depois de instânciar um formulário, eu posso alterar propriedades. Por exemplo, eu posso alterar o valor do texto mostrado no botão submit.
+Exemplo:
+$form->get('submit')->setAttribute('value', 'Edit');
+
+Também é possível atribuir o inputFilter no controller. Se o inputFilter estiver definido na entidade (model), provavelmente é uma melhor forma do que no próprio formulário.
+Exemplo:
+$form->setInputFilter($post->getInputFilter());
+
+Todos os componentes do Framework usam o mesmo componente de filtros e validadores.
+
+Fluxo importante:
+- Pegar os dados do $request->getPost() e atribuir ao formulário;
+- Verificar se o formulário está válido;
+- Salvar os dados do FORMULÁRIO no bando de dados, por que os dados já estarão tratados. NÃO utilizar o $request->getPost().
+
+Aula 09 - Eventos
+-----------------
+
+Componente: EventManager.
+
+Sempre que acontecer um determinado evento, o framework vai executar um código nosso.
+
+No nosso caso, o listener vai ouvir o dispatch e executar o preDispatch.
+
+Vamos usar um evento chamado EVENT_DISPATCH que é gerado pela classe Zend\Mvc\Controller\AbstractActionController (e suas filhas) toda vez que um controlador é executado.
+
+Listener. Vai "ouvir" algum evento e executar o código.
+
+public function onbootstrap($e) pode ser colocado no Module.php de qualquer módulo, é um evento global.
+
+O método onbootstrap($e) é um método que todos os módulos possuem. É executado toda vez que um controlador é instanciado.
+
+A zend recomenda não colocar código pesado no onbootstrap.
+
+Aula 10 - Controle de acesso
+----------------------------
+
+AAA - Autentication. Autorization. Accounting.
+AAA - Autenticação. Autorização. Accountig.
+
+
+
+
+

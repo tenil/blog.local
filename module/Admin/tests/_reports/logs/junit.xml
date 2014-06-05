@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Admin Test Suite" tests="14" assertions="34" failures="0" errors="0" time="5.755523">
-    <testsuite name="Admin\Model\UserTest" file="/vagrant/module/Admin/tests/src/Admin/Model/UserTest.php" tests="8" assertions="20" failures="0" errors="0" time="3.599235">
-      <testcase name="testGetInputFilter" class="Admin\Model\UserTest" file="/vagrant/module/Admin/tests/src/Admin/Model/UserTest.php" line="14" assertions="1" time="0.870054"/>
-      <testcase name="testInputFilterValid" class="Admin\Model\UserTest" file="/vagrant/module/Admin/tests/src/Admin/Model/UserTest.php" line="25" assertions="7" time="0.255887"/>
-      <testcase name="testInputFilterInvalidoUsername" class="Admin\Model\UserTest" file="/vagrant/module/Admin/tests/src/Admin/Model/UserTest.php" line="40" assertions="1" time="0.290401"/>
-      <testcase name="testInputFilterInvalidoRole" class="Admin\Model\UserTest" file="/vagrant/module/Admin/tests/src/Admin/Model/UserTest.php" line="52" assertions="1" time="0.287371"/>
-      <testcase name="testInsert" class="Admin\Model\UserTest" file="/vagrant/module/Admin/tests/src/Admin/Model/UserTest.php" line="64" assertions="2" time="0.464423"/>
-      <testcase name="testInsertInvalido" class="Admin\Model\UserTest" file="/vagrant/module/Admin/tests/src/Admin/Model/UserTest.php" line="77" assertions="2" time="0.315256"/>
-      <testcase name="testUpdate" class="Admin\Model\UserTest" file="/vagrant/module/Admin/tests/src/Admin/Model/UserTest.php" line="85" assertions="3" time="0.717545"/>
-      <testcase name="testDelete" class="Admin\Model\UserTest" file="/vagrant/module/Admin/tests/src/Admin/Model/UserTest.php" line="107" assertions="3" time="0.398298"/>
-    </testsuite>
-    <testsuite name="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" tests="6" assertions="14" failures="0" errors="0" time="2.156288">
-      <testcase name="testAuthenticateWithoutParams" class="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" line="28" assertions="1" time="0.332274"/>
-      <testcase name="testAuthenticateEmptyParams" class="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" line="40" assertions="2" time="0.267712"/>
-      <testcase name="testAuthenticateInvalidParameters" class="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" line="52" assertions="2" time="0.323392"/>
-      <testcase name="testAuthenticateInvalidPassord" class="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" line="64" assertions="2" time="0.384550"/>
-      <testcase name="testAuthenticateValidParams" class="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" line="75" assertions="3" time="0.428465"/>
-      <testcase name="testLogout" class="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" line="108" assertions="4" time="0.419895"/>
+  <testsuite name="Admin Test Suite" tests="7" assertions="17" failures="0" errors="0" time="3.286810">
+    <testsuite name="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" tests="7" assertions="17" failures="0" errors="0" time="3.286810">
+      <testcase name="testAuthenticateWithoutParams" class="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" line="28" assertions="1" time="0.854242"/>
+      <testcase name="testAuthenticateEmptyParams" class="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" line="40" assertions="2" time="0.235188"/>
+      <testcase name="testAuthenticateInvalidParameters" class="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" line="52" assertions="2" time="0.411114"/>
+      <testcase name="testAuthenticateInvalidPassord" class="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" line="64" assertions="2" time="0.512309"/>
+      <testcase name="testAuthenticateValidParams" class="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" line="75" assertions="3" time="0.441697"/>
+      <testcase name="testAuthorize" class="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" line="108" assertions="3" time="0.420007"/>
+      <testcase name="testLogout" class="Admin\Service\AuthTest" file="/vagrant/module/Admin/tests/src/Admin/Service/AuthTest.php" line="129" assertions="4" time="0.412253"/>
     </testsuite>
   </testsuite>
 </testsuites>

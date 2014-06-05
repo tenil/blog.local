@@ -102,6 +102,27 @@ class AuthTest extends ServiceTestCase {
     }
 
     /**
+     * Teste da autorização
+     * @return void
+     */
+    public function testAuthorize() {
+        $authService = $this->getService('Admin\Service\Auth');
+
+        $result = $authService->authorize();
+        $this->assertFalse($result);
+
+        $user = $this->addUser();
+
+        $result = $authService->authenticate(
+                array('username' => $user->username, 'password' => 'apple')
+        );
+        $this->assertTrue($result);
+
+        $result = $authService->authorize();
+        $this->assertTrue($result);
+    }
+
+    /**
      * Teste do logout
      * @return void
      */

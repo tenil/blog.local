@@ -1,40 +1,46 @@
 <?php
 
-namespace Admin\Form;
+namespace Application\Form;
 
 use Zend\Form\Form;
 
-class Login extends Form {
+class Post extends Form {
 
     public function __construct() {
-        parent::__construct('login');
+        parent::__construct('post');
         $this->setAttribute('method', 'post');
-        $this->setAttribute('action', '/admin/auth/login');
-//        $this->setAttribute('action', $this->url('login'));
+        $this->setAttribute('action', '/admin/index/save');
 
         $this->add(array(
-            'name' => 'username',
+            'name' => 'id',
+            'attributes' => array(
+                'type' => 'hidden',
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'title',
             'attributes' => array(
                 'type' => 'text',
             ),
             'options' => array(
-                'label' => 'Username',
+                'label' => 'Título',
             ),
         ));
         $this->add(array(
-            'name' => 'password',
+            'name' => 'description',
             'attributes' => array(
-                'type' => 'password',
+                'type' => 'textarea',
             ),
             'options' => array(
-                'label' => 'Password',
+                'label' => 'Texto do post',
             ),
         ));
         $this->add(array(
             'name' => 'submit',
             'attributes' => array(
                 'type' => 'submit',
-                'value' => 'Entrar',
+                'value' => 'Enviar',
                 'id' => 'submitbutton',
             ),
         ));

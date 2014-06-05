@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-md-12">
         <p>
-            <a class="btn btn-lg btn-default" href="<?php echo $this->url('application/default', array('controller' => 'index', 'action' => 'save')) ?>" target="_self">Novo</a>
+            <a class="btn btn-lg btn-default" href="/admin/index/save" target="_self">Novo</a>
         </p>
     </div>
     <div class="col-md-12">
@@ -29,8 +29,8 @@
                             ?></kbd></td>
                     <td style="width: 161px">
                         <div class="btn-group">
-                            <a href="<?php echo $this->url('application/default', array('controller' => 'index', 'action' => 'save', 'id' => $post['id'])) ?>" title="Editar" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-edit"></span> Editar</a>
-                            <a href="<?php echo $this->url('application/default', array('controller' => 'index', 'action' => 'delete', 'id' => $post['id'])) ?>" rel="confirmation" title="Deseja excluir este registro?" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-trash"></span> Excluir</a>
+                            <a href="/admin/index/save/id/<?php echo $post['id'] ?>" title="Editar" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-edit"></span> Editar</a>
+                            <a href="/admin/index/delete/id/<?php echo $post['id'] ?>" rel="confirmation" title="Deseja excluir este registro?" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-trash"></span> Excluir</a>
                         </div>
                     </td>
                 </tr>
