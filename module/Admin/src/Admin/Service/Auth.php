@@ -79,14 +79,41 @@ class Auth extends Service {
 
     /**
      * Faz a autorização do usuário para acessar o recurso
+     * @param string $moduleName Nome do módulo sendo acessado
+     * @param string $controllerName Nome do controller
+     * @param string $actionName Nome da ação
      * @return boolean
      */
-    public function authorize() {
+    public function authorize($moduleName, $controllerName, $actionName) {
         $auth = new AuthenticationService();
+        $role = 'visitante';
         if ($auth->hasIdentity()) {
-            return true;
+            $session = $this->getServiceManager()->get('Session');
+            $user = $session->offsetGet('user');
+            $role = $user->role;
         }
-        return false;
+
+        $resource = $controllerName . '.' . $actionName;
+        $acl = $this->getServiceManager()->get('Core\Acl\Builder')->build();
+        if ($acl->isAllowed($role, $resource)) {
+            return TRUE;
+        }
+        return FALSE;
     }
 
+    /**
+     * Faz a autorização do usuário para acessar o recurso
+     * Código utilizado antes do Zend ACL
+     * @return boolean
+     */
+    /*
+      public function authorize() {
+      $auth = new AuthenticationService();
+      if ($auth->hasIdentity()) {
+      return true;
+      }
+      return false;
+      }
+     * 
+     */
 }

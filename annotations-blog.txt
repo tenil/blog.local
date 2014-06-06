@@ -79,7 +79,7 @@ Exemplos:
         )
     ),
 
-Aula 08 - Formulários
+Aula 09 - Formulários
 ---------------------
 Testar o formulário para ver se ele foi requisitado via post ou via get.
 
@@ -98,7 +98,7 @@ Fluxo importante:
 - Verificar se o formulário está válido;
 - Salvar os dados do FORMULÁRIO no bando de dados, por que os dados já estarão tratados. NÃO utilizar o $request->getPost().
 
-Aula 09 - Eventos
+Aula 10 - Eventos
 -----------------
 
 Componente: EventManager.
@@ -117,11 +117,43 @@ O método onbootstrap($e) é um método que todos os módulos possuem. É execut
 
 A zend recomenda não colocar código pesado no onbootstrap.
 
-Aula 10 - Controle de acesso
+Aula 11 - Controle de acesso
 ----------------------------
 
 AAA - Autentication. Autorization. Accounting.
 AAA - Autenticação. Autorização. Accountig.
+
+ACL - Access Control List - Lista de controle de acesso.
+
+Papel (role): o papel que um usuário desempenha no sistema.
+Recurso (resource): algo a ser protegido. Ex.: Um controlador, uma action, uma entidade, um partial, etc.
+Privilégio (privilege): o tipo de acesso exigido. Acesso negado ou permitido.
+
+Na video aulas estamso usando a configuração no global.php.
+Criamos uma classe no Core\Acl\Builder.php para usar a configuração.
+Futuramente pode ser criada a Classe Core\Acl\DbBuilder.php para utilizar banco de dados.
+
+Agora vamos no Admin\Module.php modificar o mvcPreDispatch($event).
+
+Após isso, configuramos o Service\Auth.php para usar as novas regras.
+
+Então trabalhamos com 4 arquivos nessa configuração.
+- config\autoload\global.php
+- Core\Acl\Builder.php
+- Admin\Module.php
+- Admin\Service\Auth.php
+
+Aula 12 - View Helper
+---------------------
+
+Precisa estender AbstractHelper e implementar ServiceLocatorAwareInterface.
+
+Quando criar View Helpers? Quando você tem uma lógica que você vai usar em várias views ou quando você quer fazer uma ligação entre uma visão e um serviço.
+
+Quando criar Partials? Quando você vai utilizar mais HTML e pouca lógica.
+
+
+
 
 
 
